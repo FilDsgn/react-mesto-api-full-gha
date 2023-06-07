@@ -39,7 +39,7 @@ app.use(errorLogger);
 app.use(errors());
 app.use(handleError);
 
-mongoose.connect('mongodb://localhost:27017/mestodb');
+mongoose.connect('mongodb://0.0.0.0:localhost:27017/mestodb');
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
