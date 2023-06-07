@@ -1,0 +1,23 @@
+.auth-form__input {
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0 0 13px 0;
+}
+
+.auth-form__input:first-of-type {
+  margin: 50px 0 0px 0;
+} 
+
+.auth-form__input:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 440px) {
+  .auth-form__input:first-of-type {
+    margin: 40px 0 0px 0;
+  } 
+}
