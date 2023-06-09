@@ -92,7 +92,7 @@ class Api {
 }
 
 const apiConfig = {
-  baseUrl: "https://filwebdev.nomoredomains.rocks",
+  baseUrl: "https://api.filwebdev.nomoredomains.rocks",
   headers: {
     Authorization: localStorage.getItem("jwt"),
     // authorization: `Bearer ${localStorage.getItem("jwt")}`,

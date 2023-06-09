@@ -1,4 +1,4 @@
-export const baseUrl = "https://auth.nomoreparties.co";
+export const baseUrl = "https://api.filwebdev.nomoredomains.rocks";
 
 export const register = (password, email) => {
   return fetch(`${baseUrl}/signup`, {
