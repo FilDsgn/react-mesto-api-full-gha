@@ -92,9 +92,9 @@ class Api {
 }
 
 const apiConfig = {
-  baseUrl: "https://mesto.nomoreparties.co/v1/cohort-60",
+  baseUrl: "https://filwebdev.nomoredomains.rocks",
   headers: {
-    Authorization: "594f53a9-2ef4-460f-805e-a78ca111123b",
+    Authorization: localStorage.getItem("jwt"),
     "Content-Type": "application/json",
   },
 };
