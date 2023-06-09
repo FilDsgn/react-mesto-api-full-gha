@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-// const cors = require('cors');
+const cors = require('cors');
 
 const { PORT = 3000 } = process.env;
 const { errors } = require('celebrate');
@@ -19,7 +19,7 @@ const { createUser, login } = require('./controllers/users');
 
 const app = express();
 
-// app.use(cors());
+app.use(cors());
 
 app.use(express.json());
 
@@ -42,7 +42,7 @@ app.use(errorLogger);
 app.use(errors());
 app.use(handleError);
 
-mongoose.connect('mongodb://0.0.0.0:27017/mestodb');
+mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
