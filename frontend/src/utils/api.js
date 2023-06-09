@@ -95,6 +95,7 @@ const apiConfig = {
   baseUrl: "https://filwebdev.nomoredomains.rocks",
   headers: {
     Authorization: localStorage.getItem("jwt"),
+    // authorization: `Bearer ${localStorage.getItem("jwt")}`,
     "Content-Type": "application/json",
   },
 };
