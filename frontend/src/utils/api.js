@@ -35,8 +35,14 @@ class Api {
   }
 
   getCardList() {
+    const token = localStorage.getItem("jwt");
+
     return this._request(`${this._baseUrl}/cards`, {
       method: "GET",
+      // headers: {
+      //   Authorization: `${token}`,
+      //   "Content-Type": "application/json",
+      // },
       headers: this._headers,
     });
   }
@@ -94,8 +100,8 @@ class Api {
 const apiConfig = {
   baseUrl: "https://api.filwebdev.nomoredomains.rocks",
   headers: {
-    Authorization: localStorage.getItem("jwt"),
-    // authorization: `Bearer ${localStorage.getItem("jwt")}`,
+    authorization: localStorage.getItem("jwt"),
+    // Authorization: `Bearer ${localStorage.getItem("jwt")}`,
     "Content-Type": "application/json",
   },
 };
