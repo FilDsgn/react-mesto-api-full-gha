@@ -97,7 +97,7 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some((like) => like._id === currentUser._id);
+    const isLiked = card.likes.some((like) => like === currentUser._id);
 
     api
       .changeLikeCardStatus(card.id, isLiked)
@@ -112,7 +112,7 @@ function App() {
   }
 
   function handleCardDelete(card) {
-    const isOwn = card.owner._id === currentUser._id;
+    const isOwn = card.owner === currentUser._id;
     setIsLoading(true);
 
     if (isOwn) {
@@ -233,7 +233,7 @@ function App() {
       .then((res) => {
         if (res) {
           setLoggedIn(true);
-          handleLogin(res.data.email);
+          handleLogin(res.email);
           navigate("/");
         }
       })
