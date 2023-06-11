@@ -48,16 +48,16 @@ function App() {
 
   React.useEffect(() => {
     api
-      .getCardList()
-      .then((cardList) => {
-        setCards(cardList);
+      .getUserInfo()
+      .then((userInfo) => {
+        setCurrentUser(userInfo);
       })
       .catch((err) => console.log(err));
 
     api
-      .getUserInfo()
-      .then((userInfo) => {
-        setCurrentUser(userInfo);
+      .getCardList()
+      .then((cardList) => {
+        setCards(cardList);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -135,6 +135,7 @@ function App() {
   }
 
   function handleCardImageClick(card) {
+    console.log(currentUser);
     setIsImagePopupOpen(true);
     setSelectedCard(card);
   }
@@ -170,7 +171,7 @@ function App() {
     api
       .createCard(newCard)
       .then((card) => {
-        setCards([card, ...cards]);
+        setCards([...cards, card]);
         closeAllPopups();
       })
       .catch((err) => console.log(err))

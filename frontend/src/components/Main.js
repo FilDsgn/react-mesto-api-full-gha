@@ -58,19 +58,21 @@ function Main({
         className="elements"
       >
         <div className="elements__container">
-          {cards.map((card) => (
-            <Card
-              name={card.name}
-              link={card.link}
-              likes={card.likes}
-              key={card._id}
-              id={card._id}
-              owner={card.owner}
-              onCardClick={onCardClick}
-              onCardLike={onCardLike}
-              onCardDelete={onCardDelete}
-            />
-          ))}
+          {cards
+            .map((card) => (
+              <Card
+                name={card.name}
+                link={card.link}
+                likes={card.likes}
+                key={card._id}
+                id={card._id}
+                owner={card.owner}
+                onCardClick={onCardClick}
+                onCardLike={onCardLike}
+                onCardDelete={onCardDelete}
+              />
+            ))
+            .reverse()}
         </div>
       </section>
     </main>
