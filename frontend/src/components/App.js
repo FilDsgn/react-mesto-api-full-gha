@@ -47,20 +47,16 @@ function App() {
     isInfoTooltipOpen;
 
   React.useEffect(() => {
-    api
-      .getUserInfo()
-      .then((userInfo) => {
-        setCurrentUser(userInfo);
-      })
-      .catch((err) => console.log(err));
-
-    api
-      .getCardList()
-      .then((cardList) => {
-        setCards(cardList);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+    if (loggedIn) {
+      Promise.all([api.getUserInfo(), api.getCardList()])
+        .then((res) => {
+          const [userInfo, cardList] = res;
+          setCurrentUser(userInfo);
+          setCards(cardList);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [loggedIn]);
 
   function closeAllPopups() {
     setIsEditProfilePopupOpen(false);

@@ -10,7 +10,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.68.45
+IP 130.193.40.227
 
 Frontend https://filwebdev.nomoredomains.rocks
 
