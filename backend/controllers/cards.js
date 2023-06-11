@@ -34,7 +34,7 @@ const deleteCard = (req, res, next) => {
         throw new ForbiddenError('Карточка пренадлежит другому пользователю.');
       }
 
-      return Card.deleteOne(card)
+      return Card.deleteOne()
         .then(() => {
           res.send({ message: 'Карточка удалена' });
         });
